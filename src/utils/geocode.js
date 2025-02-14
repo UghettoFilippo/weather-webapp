@@ -19,9 +19,6 @@ const geocode=(address,callback)=>{
     })
 }
 
-/* geocode('giaveno',(error,data)=>{
-    console.log('error: ',error)
-    console.log('data: ',data)
-})    */
+
 
 module.exports = geocode
