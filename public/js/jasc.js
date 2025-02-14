@@ -16,7 +16,7 @@ form.addEventListener('submit',(event)=>{
     p1.textContent='Loading...'
     p2.textContent=''
     
-    fetch('http://localhost:3000/weather?address='+encodeURIComponent(location)).then((response)=>{
+    fetch('http://localhost:3000/weather?address='+encodeURIComponent(location),{ mode: 'no-cors'}).then((response)=>{
         response.json().then((data) =>{
             if(data.error){
                 console.log(data.error)
