@@ -56,6 +56,7 @@ app.get('/weather',(req,res)=>{
             return res.send({error})
         }
         forecast(data.lat,data.lon,(error,Fdata)=>{
+        
             if(error){
                 return res.send({error})
             }
@@ -64,6 +65,7 @@ app.get('/weather',(req,res)=>{
                 forecast:Fdata,
                 location:data.loc,
                 address:req.query.address
+                
             })
         })
 

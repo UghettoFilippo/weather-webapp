@@ -12,8 +12,15 @@ const forecast = (lat,lon, callback)=>{
         }else{
 
             let bd=response.body.current
-            let location= response.body.location.name
-            callback(undefined,'in '+location+' it is currently '+ bd.temp_c + ' degrees out. It feels like '+bd.feelslike_c)
+            let location= response.body.location
+    
+            callback(undefined,'In <strong>'+location.name+'</strong> it is currently <strong>'+ bd.temp_c + '</strong> degrees out. It feels like <strong>'+bd.feelslike_c+ "</strong><br>"+
+                'The weather condition is <strong>'+bd.condition.text+ "</strong><br>"+
+                'Local time : <strong>'+ location.localtime+ "</strong><br>"+
+                'Last update: <strong>'+ bd.last_updated+"</strong>"
+
+            )
+            
         }
         })
             }

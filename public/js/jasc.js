@@ -12,6 +12,8 @@ const p2=document.getElementById('mess-2')
 form.addEventListener('submit',(event)=>{
     event.preventDefault()
 
+    
+
     const location = search.value
     p1.textContent='Loading...'
     p2.textContent=''
@@ -27,7 +29,7 @@ form.addEventListener('submit',(event)=>{
                 console.log(data.forecast)
 
                 p1.textContent=data.location
-                p2.textContent=data.forecast
+                p2.innerHTML=data.forecast
             }
         })
     })
